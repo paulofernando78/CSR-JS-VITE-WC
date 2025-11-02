@@ -1,7 +1,7 @@
 @import "@css/imports.css";
-
 :root {
   --border-radius: 5px;
+  --header: max-content
 }
 
 body {
@@ -22,11 +22,12 @@ body {
 
 header {
   grid-area: header;
-  background-color: var(--gray-4);
+  border: 1px solid var(--gray-4);
   border-radius: var(--border-radius);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: var(--header);
 }
 
 .header-logo {
@@ -35,7 +36,7 @@ header {
 
 nav {
   grid-area: nav;
-  background-color: var(--gray-4);
+  border: 1px solid var(--gray-4);
   padding: var(--padding);
   border-radius: var(--border-radius);
   width: 100px;
@@ -43,6 +44,13 @@ nav {
 
 nav.visible {
   display: block;
+}
+
+main {
+  height: calc(100dvh - var(--header));
+  border: 1px solid var(--gray-4);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
 }
 
 @media (max-width: 700px) {

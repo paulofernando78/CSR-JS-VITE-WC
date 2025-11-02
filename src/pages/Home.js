@@ -13,6 +13,7 @@ class Home extends HTMLElement {
     });
 
     this.container = document.createElement("div");
+    this.container.className = "line-break"
     this.shadowRoot.appendChild(this.container);
   }
 
@@ -24,7 +25,7 @@ class Home extends HTMLElement {
     /* html */ 
     this.container.innerHTML = `
       <h1 class="title">JS Vanilla + Vite Boilerplate</h1>
-      <p>Welcome to the Home Page</p>
+      <p>Home Page</p>
     `
   }
 }

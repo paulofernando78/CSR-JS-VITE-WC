@@ -3,6 +3,10 @@ import styleButton from "@css/components/button.css?inline";
 import { menu, lightMode, darkMode } from "../../../assets/images/svg-imports";
 
 class Button extends HTMLElement {
+  static get observedAttributes() {
+    return ["icon"];
+  }
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -12,16 +16,15 @@ class Button extends HTMLElement {
       style.textContent = imports;
       this.shadowRoot.appendChild(style);
     });
+
+    this.button = document.createElement("button");
+    this.shadowRoot.appendChild(this.button);
   }
 
   connectedCallback() {
-    const icons = { menu, lightMode, darkMode };
-    const iconAttr = this.getAttribute("icon");
+    this.updateIcon();
 
-    const button = document.createElement("button");
-    button.innerHTML = icons[iconAttr] || "";
-
-    button.addEventListener("click", () => {
+    this.button.addEventListener("click", () => {
       this.dispatchEvent(
         new CustomEvent("nav-click", {
           bubbles: true,
@@ -29,8 +32,16 @@ class Button extends HTMLElement {
         })
       );
     });
+  }
 
-    this.shadowRoot.appendChild(button);
+  attributeChangedCallback(name) {
+    if (name === "icon") this.updateIcon();
+  }
+
+  updateIcon() {
+    const icons = { menu, lightMode, darkMode };
+    const iconAttr = this.getAttribute("icon");
+    this.button.innerHTML = icons[iconAttr] || "";
   }
 }
 
