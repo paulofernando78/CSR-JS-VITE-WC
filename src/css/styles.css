@@ -51,7 +51,6 @@ main {
   border: 1px solid var(--gray-4);
   padding: 0 5px 2px 5px;
   border-radius: var(--border-radius);
-  height: 100%;
 }
 
 footer {
@@ -64,8 +63,13 @@ footer {
 
 @media (max-width: 700px) {
   body {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
   }
 
   nav {
