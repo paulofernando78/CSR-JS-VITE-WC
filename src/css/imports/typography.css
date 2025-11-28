@@ -22,15 +22,6 @@ h6 {
   font-size: 1rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.2;
-}
-
 a {
   color: var(--blue-6);
   text-decoration: none;
@@ -40,12 +31,4 @@ a {
 a:hover {
   color: var(--blue-4);
   text-decoration: underline;
-}
-
-blockquote {
-  border-left: 3px solid var(--link-color);
-  padding-left: 1rem;
-  font-style: italic;
-  color: #555;
-  margin: 1.5rem 0;
 }
