@@ -57,7 +57,7 @@ nav {
   border: 1px solid var(--gray-4);
   padding: var(--padding);
   border-radius: var(--border-radius);
-  width: 100px;
+  width: 120px;
 }
 
 nav.visible {
