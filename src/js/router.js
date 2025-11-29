@@ -1,29 +1,38 @@
 const routes = {
-  404: "wc-404",
-  "/": "wc-home",
-  "/about": "wc-about",
-  "/contact": "wc-contact",
-};
-
-const componentImport = {
-  "/": () => import("../pages/Home.js"),
-  "/about": () => import("../pages/About.js"),
-  "/contact": () => import("../pages/Contact.js"),
-  404: () => import("../pages/404.js"),
+  "/": {
+    tag: "wc-home",
+    load: () => import("../pages/Home.js"),
+  },
+  "/about": {
+    tag: "wc-about",
+    load: () => import("../pages/About.js"),
+  },
+  "/contact": {
+    tag: "wc-contact",
+    load: () => import("../pages/Contact.js"),
+  },
+  404: {
+    tag: "wc-404",
+    load: () => import("../pages/404.js"),
+  },
 };
 
 let currentPath = null;
 
 export async function renderRoute() {
   const app = document.querySelector("#app");
-  const path = window.location.pathname; // Current route path
+  let path = window.location.pathname; // Current route path
+
+  if (!routes[path]) path = 404;
+
   if (path === currentPath) return;
   currentPath = path;
-  await (componentImport[path] || componentImport[404])();
-  const tagName = routes[path] || "wc-404";
 
-  app.innerHTML = "";
-  const element = document.createElement(tagName);
+  const { tag, load } = routes[path];
+
+  await load();
+
+  const element = document.createElement(tag);
   app.replaceChildren(element);
 }
 
