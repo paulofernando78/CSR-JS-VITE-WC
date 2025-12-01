@@ -36,3 +36,22 @@ navLinks.forEach((link) => {
 
 // Breakpoint animation
 
+const mq = window.matchMedia("(max-width: 700px)");
+const layout = document.querySelector(".layout");
+
+function handleBreakpoint(e) {
+  if (e.matches) {
+    document.body.classList.add("mobile");
+    setTimeout(() => {
+      layout.classList.add("no-gap");
+    }, 450);
+  } else {
+    setTimeout(() => {
+      layout.classList.remove("no-gap");
+      document.body.classList.remove("mobile");
+    }, 0)
+  }
+}
+
+mq.addEventListener("change", handleBreakpoint);
+handleBreakpoint(mq);

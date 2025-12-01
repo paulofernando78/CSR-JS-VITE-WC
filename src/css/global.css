@@ -37,6 +37,8 @@ body {
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
   gap: 5px;
+  transition: column-gap 0.3s ease;
+
   padding: var(--padding);
   height: 100dvh;
 }
@@ -63,6 +65,11 @@ nav {
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.3rem;
   overflow-y: auto;
+
+  background-color: #e8e8f3;
+  z-index: 1;
+  
+
 }
 
 nav li {
@@ -91,6 +98,22 @@ main {
   padding: 0.3125rem;
   border-radius: var(--border-radius);
   overflow-y: auto;
+  margin-left: 0px;
+  /* transition: margin-left 1s ease; */
+}
+
+nav, main {
+  transition: margin-left 1s ease;
+  will-change: transform
+}
+
+/* MOBILE */
+body.mobile nav {
+  margin-left: -160px;
+  
+}
+
+body.mobile main {
   margin-left: 0px;
 }
 
@@ -125,44 +148,29 @@ svg {
 }
 
 @media (max-width: 700px) {
+  .layout.no-gap {
+    column-gap: 0;
+  }
+  
   nav {
-    background-color: #e8e8f3;
-    z-index: 1;
-
-    transform: translateX(-220px);
-    transition: transform 1s ease;
+    /* position: absolute;
+    top: 46px; */
 
     height: 89.7dvh;
   }
 
   nav.visible {
-    transform: translateX(0);
-  }
-
-  main {
-    margin-left: -125px;
-    transition: margin-left 1s ease;
-    
-    /* transform: translateX(-125px);
-    transition: transform 1s ease;
-    margin-right: -125px; */
+    /* transform: translateX(0); */
+    margin-left: -120px;
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 701px) {
   #menu {
     display: none;
   }
 
   .header-logo {
     padding-left: 5px;
-  }
-
-  nav {
-    transform: translateX(0);
-  }
-
-  main {
-    margin-left: 0;
   }
 }
