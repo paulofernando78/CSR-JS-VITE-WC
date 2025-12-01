@@ -68,8 +68,6 @@ nav {
 
   background-color: #e8e8f3;
   z-index: 1;
-  
-
 }
 
 nav li {
@@ -99,22 +97,18 @@ main {
   border-radius: var(--border-radius);
   overflow-y: auto;
   margin-left: 0px;
-  /* transition: margin-left 1s ease; */
+  transition: margin-left 1s ease;
 }
 
-nav, main {
+nav,
+main {
   transition: margin-left 1s ease;
-  will-change: transform
+  will-change: transform;
 }
 
 /* MOBILE */
 body.mobile nav {
   margin-left: -160px;
-  
-}
-
-body.mobile main {
-  margin-left: 0px;
 }
 
 #app {
@@ -151,14 +145,14 @@ svg {
   .layout.no-gap {
     column-gap: 0;
   }
-  
-  nav {
-    height: 89.7dvh;
+
+  main {
+    position: relative;
   }
-  
+
   nav.absolute {
     position: absolute;
-    top: 46.2px;
+    top: 0;
   }
 
   body.mobile nav.visible {
@@ -173,5 +167,9 @@ svg {
 
   .header-logo {
     padding-left: 5px;
+  }
+
+  main {
+    margin-left: 0px;
   }
 }
