@@ -26,22 +26,34 @@ const navLinks = document.querySelectorAll("nav li a");
 
 menuBtn.addEventListener("nav-click", () => {
   nav.classList.toggle("visible");
+
+  if (nav.classList.contains("visible")) {
+    layout.classList.remove("no-gap");
+  } else {
+    setTimeout(() => {
+      layout.classList.add("no-gap");
+    }, 450);
+  }
 });
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     nav.classList.remove("visible");
+    layout.cl;
   });
 });
 
 // Breakpoint animation
 
-const mq = window.matchMedia("(max-width: 700px)");
+const mq = window.matchMedia("(max-width: 701px)");
 const layout = document.querySelector(".layout");
 
 function handleBreakpoint(e) {
   if (e.matches) {
     document.body.classList.add("mobile");
+
+    nav.classList.remove("visible");
+
     setTimeout(() => {
       layout.classList.add("no-gap");
     }, 450);
@@ -49,7 +61,7 @@ function handleBreakpoint(e) {
     setTimeout(() => {
       layout.classList.remove("no-gap");
       document.body.classList.remove("mobile");
-    }, 0)
+    }, 0);
   }
 }
 

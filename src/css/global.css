@@ -153,15 +153,11 @@ svg {
   }
   
   nav {
-    /* position: absolute;
-    top: 46px; */
-
     height: 89.7dvh;
   }
 
-  nav.visible {
-    /* transform: translateX(0); */
-    margin-left: -120px;
+  body.mobile nav.visible {
+    margin-left: 0;
   }
 }
 
