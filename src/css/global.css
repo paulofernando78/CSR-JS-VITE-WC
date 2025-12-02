@@ -44,14 +44,10 @@ body {
 }
 
 .layout {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "nav-main nav-main"
-    "footer footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: 5px;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 
   padding: var(--padding);
   height: 100dvh;
@@ -71,7 +67,7 @@ header {
 }
 
 .nav-main {
-  grid-area: nav-main;
+  flex: 1;
   display: flex;
   gap: var(--gap);
   position: relative;

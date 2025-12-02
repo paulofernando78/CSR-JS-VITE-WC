@@ -1,10 +1,4 @@
-// 1. routes
-// 2. currentPath
-// 3. renderToken
-// 4. renderRoute()
-// 5. prefetch
-// 6. navigateTo()
-// 7. popstate listener
+import "../js/components/atoms/Loading.js"
 
 /*
  * ROUTE TABLE
@@ -13,6 +7,10 @@
  * This enables code-splitting and lazy loading.
  */
 const routes = {
+  404: {
+    tag: "wc-404",
+    load: () => import("../pages/404.js"),
+  },
   "/": {
     tag: "wc-home",
     load: () => import("../pages/Home.js"),
@@ -24,11 +22,7 @@ const routes = {
   "/contact": {
     tag: "wc-contact",
     load: () => import("../pages/Contact.js"),
-  },
-  404: {
-    tag: "wc-404",
-    load: () => import("../pages/404.js"),
-  },
+  }
 };
 
 /*
@@ -86,10 +80,7 @@ export async function renderRoute() {
 
   app.replaceChildren(document.createElement("wc-loading"));
 
-  await Promise.all([
-    load(),
-    new Promise((resolve) => setTimeout(resolve, 1000))
-  ])
+  await load()
 
   // If the user navigated again during import, cancel this render
   if (token !== renderToken) return;

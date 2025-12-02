@@ -1,5 +1,5 @@
-const css = /* css */`
-  .loading-container {
+const css = /* css */ `
+    .loading-container {
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -24,11 +24,11 @@ const css = /* css */`
         transform: rotate(360deg);
       }
     }
-`
+`;
 
 class Loading extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = /* html */`
+    this.innerHTML = /* html */ `
       <style>${css}</style>
       <div class="loading-container">
         <div class="spinner"></div>
