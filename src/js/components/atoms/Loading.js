@@ -1,14 +1,13 @@
 const css = /* css */ `
     .loading-container {
       height: 100%;
-      padding: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 1rem;
       opacity: 0.8;
-      font-weight: bold
+      font-weight: bold;
     }
 
     .spinner {

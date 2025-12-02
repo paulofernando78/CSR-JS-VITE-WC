@@ -119,6 +119,10 @@ main {
   transition: margin-left 1s ease;
 }
 
+#app {
+  height: 100%;
+}
+
 #app > .page {
   height: 100%;
   opacity: 1;

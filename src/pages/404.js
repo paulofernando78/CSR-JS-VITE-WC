@@ -1,5 +1,16 @@
 import styleImports from "@css/styles.css?inline";
 
+const style = /* css */`
+  .not-found {
+    height: 100%;
+    disindplay: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: var(--padding);
+  }
+`
 class FourOhFour extends HTMLElement {
   constructor() {
     super();
@@ -15,6 +26,7 @@ class FourOhFour extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         ${styleImports}
+        ${style}
       </style>
       <section class="not-found">
         <h1>404</h1>

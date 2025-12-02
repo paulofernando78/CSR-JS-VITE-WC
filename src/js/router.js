@@ -78,21 +78,20 @@ export async function renderRoute() {
   // Increase token to invalidate older navigations (race condition protection)
   const token = ++renderToken;
 
-
   // 1) Fade OUT do conteúdo atual
   app.classList.add("is-fading");
 
- // aguarda a transição OU 300ms caso transitionend não dispare
-await Promise.race([
-  new Promise((resolve) => {
-    const onEnd = () => {
-      app.removeEventListener("transitionend", onEnd);
-      resolve();
-    };
-    app.addEventListener("transitionend", onEnd);
-  }),
-  new Promise((resolve) => setTimeout(resolve, 350))
-]);
+  // aguarda a transição OU 300ms caso transitionend não dispare
+  await Promise.race([
+    new Promise((resolve) => {
+      const onEnd = () => {
+        app.removeEventListener("transitionend", onEnd);
+        resolve();
+      };
+      app.addEventListener("transitionend", onEnd);
+    }),
+    new Promise((resolve) => setTimeout(resolve, 350)),
+  ]);
 
   // 2) Coloca o loading (já com opacity 0)
   app.replaceChildren(document.createElement("wc-loading"));
@@ -105,9 +104,8 @@ await Promise.race([
   if (token !== renderToken) return;
 
   const element = document.createElement(tag);
-  element.classList.add("page")
+  element.classList.add("page");
   app.replaceChildren(element);
-
 
   // 4) Fade IN do novo conteúdo
   // remove a classe num próximo frame pra animação disparar certinho

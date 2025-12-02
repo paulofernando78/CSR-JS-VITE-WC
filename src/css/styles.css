@@ -8,9 +8,3 @@
 
 /* Components */
 @import "@css/imports/components/atoms/button.css";
-
-/* Pages */
-@import "@css/imports/pages/404.css";
-@import "@css/imports/pages/home.css";
-@import "@css/imports/pages/about.css";
-@import "@css/imports/pages/contact.css"

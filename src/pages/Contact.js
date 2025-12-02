@@ -13,9 +13,12 @@ class Contact extends HTMLElement {
   render() {
     /* html */
     this.shadowRoot.innerHTML = `
-      <section class="line-break">
-        <style>${styleImports}</style>
-        <h1>Contact Page</h1>\<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio iusto odit ratione exercitationem non nemo quas excepturi necessitatibus animi numquam in beatae voluptates vitae aperiam, magni harum quam enim.</p>
+      <style>
+        ${styleImports};
+      </style>
+      <section class="line-break test">
+        <h1>Contact Page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio iusto odit ratione exercitationem non nemo quas excepturi necessitatibus animi numquam in beatae voluptates vitae aperiam, magni harum quam enim.</p>
       </section>
     `;
   }
