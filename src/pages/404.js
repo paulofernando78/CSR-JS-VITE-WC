@@ -3,7 +3,7 @@ import styleImports from "@css/styles.css?inline";
 const style = /* css */`
   .not-found {
     height: 100%;
-    disindplay: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
