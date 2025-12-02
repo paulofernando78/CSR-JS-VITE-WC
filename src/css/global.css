@@ -23,6 +23,10 @@
   --icon-invert: 1;
 }
 
+:host(:not(wc-button)) {
+  width: 100%;
+}
+
 body {
   max-width: 1100px;
   margin: 0 auto;
@@ -109,7 +113,7 @@ nav a[aria-current="page"] {
 }
 
 main {
-  height: 100%;
+  width: 100%;
   left: 125px;
   border: 1px solid var(--gray-4);
   padding: var(--padding);
@@ -117,6 +121,10 @@ main {
   overflow-y: auto;
 
   transition: margin-left 1s ease;
+}
+
+#app {
+  height: 100%;
 }
 
 footer {
@@ -141,16 +149,15 @@ svg {
 
 @media (max-width: 700px) {
   body.mobile nav {
-  margin-left: -125px;
-}
-  
+    margin-left: -125px;
+  }
+
   body.mobile nav.visible {
     margin-left: 0;
   }
 
   main {
     left: 0;
-    width: 100%;
   }
 }
 
@@ -163,8 +170,7 @@ svg {
     padding-left: 5px;
   }
 
-   main {
+  main {
     margin-left: 125px;
-    width: 100%;
   }
 }

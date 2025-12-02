@@ -92,13 +92,8 @@ export async function renderRoute() {
   if (token !== renderToken) return;
 
   // Create the new page's Web Component and replace the #app content
-  const page = document.createElement("div");
-  page.classList.add("page-container");
-
   const element = document.createElement(tag);
-  page.appendChild(element);
-
-  app.replaceChildren(page);
+  app.replaceChildren(element);
 
   updateAriaCurrent();
   window.scrollTo({ top: 0, behavior: "smooth" });

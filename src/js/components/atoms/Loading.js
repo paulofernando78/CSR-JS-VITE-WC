@@ -1,12 +1,13 @@
 const css = /* css */`
   .loading-container {
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100%;
-      gap: 12px;
+      gap: 1rem;
       opacity: 0.8;
+      font-weight: bold
     }
 
     .spinner {

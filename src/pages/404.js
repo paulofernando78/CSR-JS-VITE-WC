@@ -16,10 +16,10 @@ class FourOhFour extends HTMLElement {
       <style>
         ${styleImports}
       </style>
-      <div class="not-found">
+      <section class="not-found">
         <h1>404</h1>
         <h2>Page Not Found</h2>
-      </div>
+      </section>
       
     `;
   }
@@ -27,4 +27,4 @@ class FourOhFour extends HTMLElement {
 
 export default FourOhFour;
 
-customElements.define("wc-404", FourOhFour)
+customElements.define("wc-404", FourOhFour);
