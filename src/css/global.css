@@ -109,6 +109,10 @@ main {
   transition: left 1s ease;
 }
 
+#app {
+  
+}
+
 footer {
   grid-area: footer;
   border: 1px solid var(--gray-4);

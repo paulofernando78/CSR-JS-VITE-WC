@@ -62,10 +62,8 @@ function updateAriaCurrent() {
  * Main router function responsible for:
  * 1. Detecting the current path
  * 2. Matching it to a route
- * 3. Running fade-out transition
  * 4. Dynamically importing the page module
  * 5. Rendering the new Web Component
- * 6. Running fade-in transition
  */
 export async function renderRoute() {
   // Read the current browser path (e.g. "/about")
