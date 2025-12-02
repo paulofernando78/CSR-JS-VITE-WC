@@ -84,9 +84,12 @@ export async function renderRoute() {
   // Increase token to invalidate older navigations (race condition protection)
   const token = ++renderToken;
 
-  // Dynamically import the page module (code-splitting)
-  // This may briefly block the event loop
-  await load();
+  app.replaceChildren(document.createElement("wc-loading"));
+
+  await Promise.all([
+    load(),
+    new Promise((resolve) => setTimeout(resolve, 1000))
+  ])
 
   // If the user navigated again during import, cancel this render
   if (token !== renderToken) return;
