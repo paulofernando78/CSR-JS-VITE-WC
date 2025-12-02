@@ -89,14 +89,6 @@ export async function renderRoute() {
   const loadingElement = document.createElement("wc-loading");
   app.replaceChildren(loadingElement);
 
-  const FADE_DURATION = 250;
-
-  // Start FADE-OUT animation by adding the CSS class
-  app.classList.add("fade");
-
-  // Wait a short duration to let fade-out visually occur before loading new page
-  await new Promise((resolve) => setTimeout(resolve, FADE_DURATION));
-
   // Dynamically import the page module (code-splitting)
   // This may briefly block the event loop
   await load();
@@ -105,15 +97,16 @@ export async function renderRoute() {
   if (token !== renderToken) return;
 
   // Create the new page's Web Component and replace the #app content
+  const page = document.createElement("div");
+  page.classList.add("page-container");
+
   const element = document.createElement(tag);
-  app.replaceChildren(element);
+  page.appendChild(element);
+
+  app.replaceChildren(page);
+
   updateAriaCurrent();
   window.scrollTo({ top: 0, behavior: "smooth" });
-
-  // Begin FADE-IN animation after the new page is rendered
-  requestAnimationFrame(() => {
-    app.classList.remove("fade");
-  });
 }
 
 /*

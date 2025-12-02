@@ -109,15 +109,6 @@ main {
   transition: left 1s ease;
 }
 
-#app {
-  opacity: 1;
-  transition: opacity 0.25s ease;
-}
-
-#app.fade {
-  opacity: 0;
-}
-
 footer {
   grid-area: footer;
   border: 1px solid var(--gray-4);
