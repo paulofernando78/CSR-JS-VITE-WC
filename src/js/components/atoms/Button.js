@@ -6,6 +6,12 @@ const style = /* css */ `
     place-items: center;
   }
 
+  button {
+    all: unset;
+    cursor: pointer;
+    padding: 5px;
+  }
+
   .ham_menu {
     display: flex;
     flex-direction: column;
@@ -40,12 +46,7 @@ const style = /* css */ `
   :host([icon="lightMode"]) svg {
     filter: none;
     fill: var(--yellow-3);
-  }
-
-  button {
-    all: unset;
-    cursor: pointer;
-    padding: 5px;
+    margin-right: 2px
   }
 
   @keyframes fadeIn {
