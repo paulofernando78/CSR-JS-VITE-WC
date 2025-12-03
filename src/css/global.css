@@ -2,8 +2,9 @@
   --header: max-content;
 
   /* Light Mode */
-  --background-color: #e8e8f3;
-  --text-color: #000;
+  --background-color: var(--slate-1);
+  --text-color: var(--slate-8);
+  --menu-button: var(--slate-8);
   --icon-invert: 0;
 
   /* Spacing */
@@ -20,6 +21,7 @@
 [data-theme="dark"] {
   --background-color: #18191f;
   --text-color: #fff;
+  --menu-button: var(--slate-2);
   --icon-invert: 1;
 }
 

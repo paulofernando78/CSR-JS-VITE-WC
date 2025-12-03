@@ -10,18 +10,19 @@ const style = /* css */ `
     display: flex;
     flex-direction: column;
     gap: 3px;
+    transform: translateX(1px);
   }
 
   .ham_menu span {
     width: 20px;
     height: 3px;
-    background: currentColor;
+    background: var(--menu-button);
     border-radius: 5px;
     transition: 0.3s;
   }
 
   .line1-active {
-    transform: translateY(6px) rotate(45deg);
+    transform: translateY(6px) translateX(-3px) rotate(45deg);
   }
 
   .line2-active {
@@ -29,7 +30,7 @@ const style = /* css */ `
   }
 
   .line3-active {
-    transform: translateY(-6px) rotate(-45deg);
+    transform: translateY(-6px) translateX(-3px) rotate(-45deg);
   }
 
   :host([icon="darkMode"]) svg,

@@ -15,8 +15,10 @@ class Home extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>${styleImports}</style>
       <section class="line-break home-container" aria-label="Boilerplate">
-        <h1 class="page">Boilerplate</h1>
-        <p><b>CSR</b> (Client Side Rendering)</p>
+        <div>
+          <h1 class="page"><b>CSR</b> </h1>
+          <h2>(Client Side Rendering)</h2>
+        </div>
         <div>
           <ul>
             <li>• JS Vanilla</li>
