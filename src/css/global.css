@@ -80,7 +80,7 @@ nav {
   padding: var(--padding);
   border-radius: var(--border-radius);
   font-family: "Bebas Neue", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   overflow-y: auto;
   background-color: var(--background-color);
   z-index: 1;
