@@ -10,7 +10,6 @@ const style = /* css */ `
     display: flex;
     flex-direction: column;
     gap: 3px;
-    transform: translateX(1px);
   }
 
   .ham_menu span {
