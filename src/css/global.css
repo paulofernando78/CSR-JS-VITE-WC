@@ -54,7 +54,6 @@ body {
 }
 
 header {
-  grid-area: header;
   border: 1px solid var(--gray-4);
   border-radius: var(--border-radius);
   display: flex;
@@ -64,6 +63,10 @@ header {
 
 .header-logo {
   line-height: 1;
+}
+
+#menu {
+  margin-left: 4px;
 }
 
 .nav-main {
