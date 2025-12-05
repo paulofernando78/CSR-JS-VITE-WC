@@ -43,7 +43,7 @@ li {
   /* text-box-trim: trim-both; */
   /* text-box-edge: cap alphabetic; */
   text-box: trim-both cap alphabetic;
-  padding-top: 0.15rem;
+  padding-top: 0.14rem;
 
   overflow-wrap: anywhere;
   text-wrap: pretty;
