@@ -75,7 +75,6 @@ header {
 .nav-main {
   flex: 1;
   display: flex;
-  gap: var(--gap);
   position: relative;
 }
 
@@ -120,7 +119,6 @@ nav a[aria-current="page"] {
 
 main {
   width: 100%;
-  left: 125px;
   border: 1px solid var(--gray-4);
   padding: var(--padding);
   border-radius: var(--border-radius);
