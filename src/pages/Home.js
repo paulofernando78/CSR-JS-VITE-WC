@@ -1,10 +1,11 @@
 import styleImports from "@css/styles.css?inline";
 
+
 const style = /* css */ `
   h2 {
     font-size: 1.8rem
   }
-`
+`;
 
 class Home extends HTMLElement {
   constructor() {
@@ -35,7 +36,15 @@ class Home extends HTMLElement {
             <li>• Web Components</li>
           </ul>
         </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quis quisquam ipsum qui, minus odio quam vero sunt harum cumque optio pariatur sint, ducimus ullam delectus omnis aliquid possimus! Perferendis.</p>
+        <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quis quisquam ipsum qui, minus odio quam vero sunt harum cumque optio pariatur sint, ducimus ullam delectus omnis aliquid possimus! Perferendis.
+        </p>
+        <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quis quisquam ipsum qui, minus odio quam vero sunt harum cumque optio pariatur sint, ducimus ullam delectus omnis aliquid possimus! Perferendis.
+        </p>
+        <wc-card>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quis quisquam ipsum qui, minus odio quam vero sunt harum cumque optio pariatur sint, ducimus ullam delectus omnis aliquid possimus! Perferendis.</p>
+        </wc-card>
       </section>
     `;
   }
@@ -43,4 +52,4 @@ class Home extends HTMLElement {
 
 export default Home;
 
-customElements.define("wc-home", Home)
+customElements.define("wc-home", Home);

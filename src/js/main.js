@@ -1,13 +1,10 @@
 import "@js/app.js";
 import "@css/styles.css";
+import "@utils/componentsImport.js"
 
 // Restore Theme on Page Load
 const savedTheme = localStorage.getItem("theme") || "light";
 document.body.setAttribute("data-theme", savedTheme);
-
-// Component Button
-import Button from "./components/atoms/Button";
-customElements.define("wc-button", Button);
 
 // Dark Mode
 const darkModeBtn = document.querySelector("wc-button[icon='darkMode']");

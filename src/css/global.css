@@ -35,16 +35,6 @@ body {
   background-color: var(--background-color, #fff);
 }
 
-#loading-overlay {
-  position: fixed;
-  inset: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.6); /* coloque a cor que quiser */
-  z-index: 99999;
-}
-
 .layout {
   height: 100dvh;
   display: flex;
@@ -52,7 +42,6 @@ body {
   gap: var(--gap);
 
   padding: var(--padding);
-  height: 100dvh;
 }
 
 header {
@@ -100,12 +89,13 @@ nav li {
 }
 
 li:not(:last-child) {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  font-size: 1.3rem;
+  color: inherit;
   transition: color 0.2s ease;
 }
 

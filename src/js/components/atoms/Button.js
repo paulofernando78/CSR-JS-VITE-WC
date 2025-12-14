@@ -1,5 +1,7 @@
 import styleImports from "@css/styles.css?inline";
 
+import { lightMode, darkMode } from "../../../assets/images/svg-imports";
+
 const style = /* css */ `
   :host {
     display: grid;
@@ -61,8 +63,6 @@ const style = /* css */ `
     }
   }
 `;
-
-import { lightMode, darkMode } from "../../../assets/images/svg-imports";
 
 class Button extends HTMLElement {
   static get observedAttributes() {
@@ -129,3 +129,6 @@ class Button extends HTMLElement {
 }
 
 export default Button;
+
+
+
