@@ -45,6 +45,7 @@ class Home extends HTMLElement {
         <wc-card>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quis quisquam ipsum qui, minus odio quam vero sunt harum cumque optio pariatur sint, ducimus ullam delectus omnis aliquid possimus! Perferendis.</p>
         </wc-card>
+        
       </section>
     `;
   }
